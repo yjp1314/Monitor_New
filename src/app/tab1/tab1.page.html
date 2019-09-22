@@ -1,39 +1,39 @@
 <ion-header>
   <ion-toolbar>
-      <ion-title style="background: linear-gradient(to right, #66cdff , #1f96ff); border-bottom: 1px solid white;">
-          <span style="color: white">首 页</span>
-      </ion-title>
+    <ion-title style="background: linear-gradient(to right, #66cdff , #1f96ff); border-bottom: 1px solid white;">
+      <span style="color: white">首 页</span>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="aui-scrollView">
   <div class="aui-time-school">
-      <div class="aui-school-text">
-          <div class="zdjyzd-palace">
-              <div class="zdjyzd-palace-grid">
-                  <p>24小时最大降水站点</p>
-                  <h1 (click)="showPop(maxPositionName,24)">{{maxPositionName}}</h1>
-              </div>
-              <em>{{maxPositionValue}}<span style="font-size: 0.6rem">(mm)</span></em>
-          </div>
-          <div class="zdjyzd-palace1">
-              <div class="zdjyzd-palace-grid">
-                  <p>最近1小时最大降水量</p>
-                  <h1 (click)="showPop(oneHourMaxRainName,1)">{{oneHourMaxRainName}}</h1>
-              </div>
-              <em>{{oneHourMaxRainValue}}<span style="font-size: 0.6rem">(mm)</span></em>
-          </div>
+    <div class="aui-school-text">
+      <div class="zdjyzd-palace">
+        <div class="zdjyzd-palace-grid">
+          <p>24小时最大降水站点</p>
+          <h1 (click)="showPop(maxPositionName,24)">{{maxPositionName}}</h1>
+        </div>
+        <em>{{maxPositionValue}}<span style="font-size: 0.6rem">(mm)</span></em>
       </div>
+      <div class="zdjyzd-palace1">
+        <div class="zdjyzd-palace-grid1">
+          <p>最近1小时最大降水量</p>
+          <h1 (click)="showPop(oneHourMaxRainName,1)">{{oneHourMaxRainName}}</h1>
+        </div>
+        <em>{{oneHourMaxRainValue}}<span style="font-size: 0.6rem">(mm)</span></em>
+      </div>
+    </div>
   </div>
 
   <div class="aui-flex" style="background:#fff">
-      <div class="aui-flex-box">
-          <h1>24小时全市区域平均降水量排行(mm)</h1>
-      </div>
+    <div class="aui-flex-box">
+      <h1>24小时全市区域平均降水量排行(mm)</h1>
+    </div>
   </div>
   <div class="aui-news-item" style="background:#fff">
-      <div class="aui-ranking-item">
-          <div id="chart" style="margin-left: 10px;  width: 98%;height:280px; margin-bottom:10px; "></div>
-      </div>
+    <div class="aui-ranking-item">
+      <div id="chart" style="margin-left: 10px;  width: 98%;height:280px; margin-bottom:10px; "></div>
+    </div>
   </div>
 </ion-content>
 
@@ -41,9 +41,9 @@
   <div class="pop-top">
     <article class="tabs">
       <div class="pop-title">
-         24小时降水实况
+        24小时降水实况
       </div>
-       <ion-label></ion-label>
+      <ion-label></ion-label>
       <div class="panels">
         <div class="panel">
           <h2>{{siteTitle}}近24小时降水实况</h2>
