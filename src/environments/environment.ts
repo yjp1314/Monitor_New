@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  appServerUrl:'http://175.170.129.202:8000/api/services/app/',
-  requestTimeout:15000
+  appServerUrl: 'http://175.170.129.202:8000/api/services/app/',
+  requestTimeout: 15000
 };
 
 /*
