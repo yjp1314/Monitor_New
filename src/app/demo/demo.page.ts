@@ -9,8 +9,8 @@ import { RainService } from '../services/rain.service';
   styleUrls: ['./demo.page.scss'],
 })
 export class DemoPage implements OnInit {
-  addvName = "全市";//"中山";
-  addvCode = "2102";//"210202";
+  addvName = "市区";//"中山";
+  addvCode = "210201";//"210202";
   currentTime = new Date();
   startTime = new Date((new Date().getTime() - 2 * 24 * 60 * 60 * 1000));
   rainData = [];
@@ -142,27 +142,26 @@ export class DemoPage implements OnInit {
     // this.helper.hideLoading();
   }
   refeshAddvName(addvcds) {
-    console.log("asdfasdasdf", addvcds);
     //this.addvName = "旅顺";
     switch (addvcds) {
-      // case "2102":
-      //   this.addvName = "全市";
-      //   break;
+      case "210201":
+        this.addvName = "市区";
+        break;
       // case '210211,210202,210203,210204':
       //   this.addvName = "大连";
       //   break;
-      case '210202':
-        this.addvName = "中山";
+      case '210211':
+        this.addvName = "甘井子";
         break;
       case '210212':
-        this.addvName = "旅顺";
+        this.addvName = "高新旅顺";
         break;
-      case "cats":
-        this.addvName = "金普";
+      case "210213":
+        this.addvName = "金州";
         break;
-      // case "210281009":
-      //   this.addvName = "长兴岛";
-      //   break;
+      case "210224":
+        this.addvName = "长海县";
+        break;
       case "210282":
         this.addvName = "普兰店";
         break;
@@ -172,8 +171,8 @@ export class DemoPage implements OnInit {
       case "210283":
         this.addvName = "庄河";
         break;
-      case "210224":
-        this.addvName = "长海";
+      case "210287":
+        this.addvName = "长兴岛";
         break;
       case "210286":
         this.addvName = "英那河上";

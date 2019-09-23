@@ -20,7 +20,8 @@ export class MinePage implements OnInit {
     siteRainData = [];
     rainData = "";
 
-    addvcd = ['210202', '210212', '210213', '210282', '210281', '210283', '210224', '210286', '210285', '210284'];
+    // addvcd = ['210202', '210212', '210213', '210282', '210281', '210283', '210224', '210286', '210285', '210284'];
+    addvcd = ['210201', '210211', '210212', '210213', '210224', '210281', '210282', '210283', '210284', '210285', '210286', '210287'];
     category = [];
     data = [];
     maxCategory = "";
@@ -127,9 +128,9 @@ export class MinePage implements OnInit {
     refeshRain24Hour() {
         console.log();
         // this.helper.showLoading();
-        let rain24Hour = Utils.calDate(24);
+        // let rain24Hour = Utils.calDate(24);
         //let rain24Hour = new Date((new Date().getTime() - 24 * 60 * 60 * 1000));
-        this.ranSrv.getMaxWmtRainHourTotal(rain24Hour, this.currentTime).subscribe(res => {
+        this.ranSrv.getMaxWmtRainHourTotal(this.startTime, this.currentTime).subscribe(res => {
             if (res.isSuccess) {
                 if (res.data != null) {
                     this.generate24Hour(res.data); console.log("rainfall", res.data);
@@ -144,9 +145,9 @@ export class MinePage implements OnInit {
     refeshRegionDetail(addvcd) {
         console.log();
         this.helper.showLoading();
-        let rain24Hour = Utils.calDate(24);
+        // let rain24Hour = Utils.calDate(24);
         // let rain24Hour = new Date((new Date().getTime() - 24 * 60 * 60 * 1000));
-        this.ranSrv.getWmtRainRegionDetail(rain24Hour, Utils.calDate(0), addvcd).subscribe(res => {
+        this.ranSrv.getWmtRainRegionDetail(this.startTime, Utils.calDate(0), addvcd).subscribe(res => {
             if (res.isSuccess) {
                 if (res.data != null) {
                     this.siteCount = res.data.stationCount;

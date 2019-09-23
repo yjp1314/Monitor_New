@@ -169,6 +169,9 @@ export class Utils {
         } else if (type === 24) {
             t = new Date().getTime() - 24 * 60 * 60 * 1000;   //24小时 * 60分钟 * 60秒 * 1000
             d = new Date(t);
+        } else if (type === 48) {
+            t = new Date().getTime() - 48 * 60 * 60 * 1000;   //24小时 * 60分钟 * 60秒 * 1000
+            d = new Date(t);
         } else {
             d = new Date();
         }
