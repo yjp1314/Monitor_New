@@ -41,7 +41,7 @@
  //  background: linear-gradient(to right, #66cdff, #1f96ff);
  //  /* 标准的语法 */
  //  background-color: #41b0ff;
- background-color: #e5f6ff;
+  background-color: #e5f6ff;
   padding-bottom: 3rem;
 }
 
@@ -49,6 +49,7 @@
   text-align: center;
   color: #fff;
   padding: 0 2rem;
+  // float: left;
 }
 
 .aui-school-text .aui-palace-grid {
@@ -382,7 +383,7 @@
              width: 100%;
              text-align: center;
              color:#666;
-             font-size:0.8rem;
+             font-size:0.9rem;
              margin-bottom: 8px;
          }
          .panel p {
@@ -390,6 +391,6 @@
              width: 100%;
              text-align: center;
              color:#b8b8b8;
-             font-size:0.7rem;
+             font-size:0.8rem;
              margin-bottom: 8px;
          }
