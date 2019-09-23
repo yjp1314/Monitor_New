@@ -67,7 +67,7 @@ export class Tab1Page implements OnInit {
                 if (data.length > 0) {
                     this.maxRainValue = data[data.length - 1].cal === null ? 0 : data[data.length - 1].cal;
                     data.forEach(element => {
-                        if (element.addvName !== '甘井子区' && element.addvName !== '西岗区' && element.addvName !== '沙河口区') {
+                        if (element.addvName !== '中山区' && element.addvName !== '西岗区' && element.addvName !== '沙河口区') {
                             this.xAxis.push(element.cal === null ? 0 : element.cal);
                             this.yAxis.push(element.addvName);
                         }
