@@ -221,18 +221,6 @@
     width: 50%;
     background: #41B0FF;
     border-width: inherit;
-   
-    // display: block;
-    // float: left;
-    // width: 50%;
-    // color: #c6e6ff;
-    // text-align: center;
-    
-    // height:30px;
-    // line-height: 30px;
-    // font-size: 1.0rem;;
-    // background: #41B0FF;
-    // vertical-align: middle;
 }
 
 .tab-nav-item1.tab-active1:before {
@@ -310,18 +298,19 @@
     width: 90%;
     margin: 0 auto;
     background-color: #41b0ff;
+    padding:0;
 }
 
 .table-nav-item1 {
     height: 40px;
     line-height: 40px;
     position: relative;
-    // text-align: center;
+	text-align: center;
     color: #fff;
     font-size: 1rem;
     display: block;
     float: left;
-    width: 20%;
+    width: 19.8%;
 	border-right:1px solid #fff;
 }
 
@@ -337,7 +326,18 @@
     width: 13.333%;
 	border-right:1px solid #fff;
 }
-
+.table-nav-item2
+{
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    display: block;
+    float: left;
+    width: 13.333%;
+}
 .table-item {
     height: 40px;
     line-height: 40px;
@@ -346,6 +346,7 @@
     z-index: 1;
     width: 90%;
     margin: 0 auto;
+    padding:0;
     background-color: #fff;
 	border-left: #d9d9d9 1px solid;
 	border-bottom: #d9d9d9 1px solid;
@@ -355,17 +356,16 @@
     height: 40px;
     line-height: 40px;
     position: relative;
-
+    text-align: center;
     color: #fff;
     font-size: 0.7rem;
     display: block;
     float: left;
     width: 19.8%;
-	//background-color: #f4faff;
+    background-color: #f4faff;
 	border-right:1px solid #d9d9d9;
 	border-bottom:1px solid #d9d9d9;
 }
-
 
 .table-info-item {
     height: 40px;
@@ -382,7 +382,6 @@
 
 .table-item li span{
     color:#666;
-    text-align: center;
 }
 
 .b-line {
