@@ -31,7 +31,16 @@ import { MinePage } from './mine/mine.page';
     IonicStorageModule.forRoot(),
     NgxEchartsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicModule.forRoot({
+      // https://ionicframework.com/docs/utilities/config
+      hardwareBackButton: true,
+      rippleEffect: false,
+      mode: 'ios',
+      backButtonText: '返回',
+      statusTap: true,
+      swipeBackEnabled: true
+  }),
   ],
   providers: [
     StatusBar,
