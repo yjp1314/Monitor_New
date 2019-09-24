@@ -96,8 +96,9 @@ export class DemoPage implements OnInit {
     console.log(addvcds)
     this.ranSrv.getWmtRainTotalByHours(addvcds, this.pageIndex, this.pageSize, this.sortHour).subscribe(res => {
       if (res.isSuccess) {
-        this.siteRainData = res.data;
+        this.siteRainData = res.data;console.log("res.data",res.data,res.data.length);
         if (res.data != null && res.data.length > 0) {
+          console.log("res.data@@1",res.data);
           if (this.pageIndex > 1) {
             this.rainData = this.rainData.concat(res.data);
           }
@@ -107,10 +108,12 @@ export class DemoPage implements OnInit {
           console.log('this.rainData', this.rainData);
           this.hasMore = true;
         }
-        else if (res.data.length == 0){
+        else if (res.data.length == 0 && this.pageIndex <= 1){
+          console.log("res.data@@2",res.data);
           this.rainData = [];
         }
         else if (res.data.length < this.pageSize) {
+          console.log("res.data@@3",res.data);
           this.hasMore = false;
           //e? e.target.disabled = true:"" ;
         }
