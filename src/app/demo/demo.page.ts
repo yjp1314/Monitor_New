@@ -107,6 +107,9 @@ export class DemoPage implements OnInit {
           console.log('this.rainData', this.rainData);
           this.hasMore = true;
         }
+        else if (res.data.length == 0){
+          this.rainData = [];
+        }
         else if (res.data.length < this.pageSize) {
           this.hasMore = false;
           //e? e.target.disabled = true:"" ;
