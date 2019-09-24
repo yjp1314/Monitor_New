@@ -112,11 +112,11 @@ export class DemoPage implements OnInit {
           console.log("res.data@@2",res.data);
           this.rainData = [];
         }
-        else if (res.data.length < this.pageSize) {
-          console.log("res.data@@3",res.data);
-          this.hasMore = false;
-          //e? e.target.disabled = true:"" ;
-        }
+        // else if (res.data.length < this.pageSize) {
+        //   console.log("res.data@@3",res.data);
+        //   this.hasMore = false;
+        //   //e? e.target.disabled = true:"" ;
+        // }
         e ? e.target.complete() : "";
         this.helper.hideLoading();
       }
