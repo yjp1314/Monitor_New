@@ -27,7 +27,7 @@ import { MinePage } from './mine/mine.page';
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
+    // IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     NgxEchartsModule,
     AppRoutingModule,

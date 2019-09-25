@@ -9,69 +9,71 @@
 <ion-content class="aui-scrollView">
   <section class="aui-scrollView">
     <div class="aui-tab" data-ydui-tab>
-      <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
-        <ion-segment-button class="tab-nav-item tab-active" value="last" *ngIf="currentPeriod == 'last'">
-          <ion-label>当前</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="last" *ngIf="currentPeriod != 'last'">
-          <ion-label>当前</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="1H" *ngIf="currentPeriod == '1H'">
-          <ion-label>1H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="1H" *ngIf="currentPeriod != '1H'">
-          <ion-label>1H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="3H" *ngIf="currentPeriod == '3H'">
-          <ion-label>3H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="3H" *ngIf="currentPeriod != '3H'">
-          <ion-label>3H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="6H" *ngIf="currentPeriod == '6H'">
-          <ion-label>6H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="6H" *ngIf="currentPeriod != '6H'">
-          <ion-label>6H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="12H" *ngIf="currentPeriod == '12H'">
-          <ion-label>12H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="12H" *ngIf="currentPeriod != '12H'">
-          <ion-label>12H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="24H" *ngIf="currentPeriod == '24H'">
-          <ion-label>24H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="24H" *ngIf="currentPeriod != '24H'">
-          <ion-label>24H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="48H" *ngIf="currentPeriod == '48H'">
-          <ion-label>48H</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="48H" *ngIf="currentPeriod != '48H'">
-          <ion-label>48H</ion-label>
-        </ion-segment-button>
-      </ion-segment>
-
+      <div class="setback">
+        <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line" style="padding-top: 5px;">
+          <ion-segment-button class="tab-nav-item tab-active" value="last" *ngIf="currentPeriod == 'last'">
+            <ion-label>当前</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item" value="last" *ngIf="currentPeriod != 'last'">
+            <ion-label>当前</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item tab-active" value="1H" *ngIf="currentPeriod == '1H'">
+            <ion-label>1H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item" value="1H" *ngIf="currentPeriod != '1H'">
+            <ion-label>1H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item tab-active" value="3H" *ngIf="currentPeriod == '3H'">
+            <ion-label>3H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item" value="3H" *ngIf="currentPeriod != '3H'">
+            <ion-label>3H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item tab-active" value="6H" *ngIf="currentPeriod == '6H'">
+            <ion-label>6H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item" value="6H" *ngIf="currentPeriod != '6H'">
+            <ion-label>6H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item tab-active" value="12H" *ngIf="currentPeriod == '12H'">
+            <ion-label>12H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item" value="12H" *ngIf="currentPeriod != '12H'">
+            <ion-label>12H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item tab-active" value="24H" *ngIf="currentPeriod == '24H'">
+            <ion-label>24H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item" value="24H" *ngIf="currentPeriod != '24H'">
+            <ion-label>24H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item tab-active" value="48H" *ngIf="currentPeriod == '48H'">
+            <ion-label>48H</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="tab-nav-item" value="48H" *ngIf="currentPeriod != '48H'">
+            <ion-label>48H</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
       <div class="tab-panel">
         <div class="tab-panel-item tab-active">
           <div class="aui-text-title">
             <h2>全区雨水分布图<span>（单位:mm）</span></h2>
             <p>{{startTime | date:'yyyy-MM-dd HH:mm'}} 至 {{currentTime | date:'yyyy-MM-dd HH:mm'}}</p>
           </div>
-<!-- 
+          <!-- 
           <div class="aui-chart" id="rainChart" echarts [options]="chartOption" (chartClick)="chartClicked($event)">
           </div> -->
-            <div class="aui-chart" id="rainChart"></div>
+          <div class="aui-chart" id="rainChart"></div>
           <div class="divHeight"></div>
           <div class="info-list">
             <ul>
               <li><span name="s1">当前区域·</span><span name="s2">{{rainData}}</span></li>
               <li><span name="s1">最大降水量</span><span name="s2">{{maxData}}mm</span></li>
-              <li><span name="s1">出现站点</span><span name="s2" *ngIf="maxData>0">{{maxCategory}}</span></li>              
+              <li><span name="s1">出现站点</span><span name="s2" *ngIf="maxData>0">{{maxCategory}}</span></li>
               <li><span name="s1">小时最大降水量</span><span name="s2">{{hourRainfallMax}}mm</span></li>
-              <li><span name="s1">出现站点(出现时间)</span><span name="s2" *ngIf="hourRainfallMax>0">{{siteHourRainfallMax}}</span></li>
+              <li><span name="s1">出现站点(出现时间)</span><span name="s2"
+                  *ngIf="hourRainfallMax>0">{{siteHourRainfallMax}}</span></li>
               <li *ngIf="siteCount > 0"><span name="s1">总站数</span><span name="s2">{{siteCount}}</span></li>
               <li><span name="s1">出现降水站数</span><span name="s2">{{availbleSiteCount}}</span></li>
             </ul>

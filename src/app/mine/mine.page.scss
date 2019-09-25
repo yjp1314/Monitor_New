@@ -265,6 +265,11 @@ a {
   font-size: 1rem;
   display:block;
 }
+
+.setback{
+  height: 35px;
+  background-color: #e5f6ff;
+}
 .tab-nav {
   height: 30px;
   line-height: 40px;
@@ -277,7 +282,7 @@ a {
   // background: -o-linear-gradient(right, #1f96ff , #66cdff);
   // background: -moz-linear-gradient(right, #1f96ff , #66cdff);
   // background: linear-gradient(to right, #66cdff , #1f96ff);
-  background-color: #e5f6ff;
+
 }
 
 .tab-nav-item {
