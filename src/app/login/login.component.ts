@@ -49,7 +49,7 @@ export class LoginPage implements OnInit {
               // this.helper.toast('自动登录中！', 1000, 'bottom');
               this.loading = false;
               setTimeout(() => {
-                  this.nav.navigateRoot('/tabs/tab1');
+                  this.nav.navigateRoot('/tabs');
               }, 1000);
           } else {
               this.loading = false;
@@ -80,7 +80,7 @@ export class LoginPage implements OnInit {
               // sessionStorage.setItem('password', this.model.password);
               this.storage.set('loginmsg', { 'username': this.model.username, 'password': this.model.password });
               this.loading = false;
-              this.nav.navigateRoot('/tabs/tab1');
+              this.nav.navigateRoot('/tabs');
           } else {
               this.loading = false;
               this.helper.toast('用户名或密码错误,请重试！', 2000, 'bottom');
