@@ -60,9 +60,11 @@
   <div class="pop-content">
   </div>
   <div class="pop-foot">
-    <input type="image" value="" class="pop-cancel pop-close" (click)="twoBtnCancel()" />
+    <div>
+      <input type="image" value="" class="pop-cancel pop-close" (click)="twoBtnCancel()" />
+    </div>
   </div>
 </div>
 
- 
+
 <div class="bgPop" *ngIf="IsShowCover" (click)="closeDialog()"></div>
