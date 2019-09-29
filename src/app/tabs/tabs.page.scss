@@ -1,1 +1,13 @@
-
+.mytabs {
+    .mytabbar {
+        display: inline-block !important;
+        .mytab {
+            display: inline-block !important;
+            width: 33.33% !important;
+            max-width: 33.33% !important;
+            ion-icon {
+                margin: auto;
+            }
+        }
+    }
+}

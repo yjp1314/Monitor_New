@@ -1,217 +1,214 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title style="background: linear-gradient(to right, #66cdff , #1f96ff);">
-      <span style="color: white">站点雨量</span>
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title style="background: linear-gradient(to right, #66cdff , #1f96ff);">
+            <span style="color: white">站点雨量</span>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="aui-scrollView">
-  <div class="aui-tab" data-ydui-tab>
-    <div class="setback">
-      <div style="height: 3px;"></div>
-      <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
-        <ion-segment-button class="tab-nav-item tab-active" value="210201" *ngIf="addvCode == '210201'">
-          <ion-label>市区</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210201" *ngIf="addvCode != '210201'">
-          <ion-label>市区</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210211" *ngIf="addvCode == '210211'">
-          <ion-label>甘井子</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210211" *ngIf="addvCode != '210211'">
-          <ion-label>甘井子</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210285" *ngIf="addvCode == '210285'">
-          <ion-label>碧流河下 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210285" *ngIf="addvCode != '210285'">
-          <ion-label>碧流河下 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210224" *ngIf="addvCode == '210224'">
-          <ion-label>长海县</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210224" *ngIf="addvCode != '210224'">
-          <ion-label>长海县</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210281" *ngIf="addvCode == '210281'">
-          <ion-label>瓦房店</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210281" *ngIf="addvCode != '210281'">
-          <ion-label>瓦房店</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210212" *ngIf="addvCode == '210212'">
-          <ion-label>高新旅顺</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210212" *ngIf="addvCode != '210212'">
-          <ion-label>高新旅顺</ion-label>
-        </ion-segment-button>
-      </ion-segment>
+    <div class="aui-tab" data-ydui-tab>
+        <div class="setback">
+            <div style="height: 3px;"></div>
+            <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
+                <ion-segment-button class="tab-nav-item tab-active" value="210201" *ngIf="addvCode == '210201'">
+                    <ion-label>市区</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210201" *ngIf="addvCode != '210201'">
+                    <ion-label>市区</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210211" *ngIf="addvCode == '210211'">
+                    <ion-label>甘井子</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210211" *ngIf="addvCode != '210211'">
+                    <ion-label>甘井子</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210285" *ngIf="addvCode == '210285'">
+                    <ion-label>碧流河下 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210285" *ngIf="addvCode != '210285'">
+                    <ion-label>碧流河下 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210224" *ngIf="addvCode == '210224'">
+                    <ion-label>长海县</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210224" *ngIf="addvCode != '210224'">
+                    <ion-label>长海县</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210281" *ngIf="addvCode == '210281'">
+                    <ion-label>瓦房店</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210281" *ngIf="addvCode != '210281'">
+                    <ion-label>瓦房店</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210212" *ngIf="addvCode == '210212'">
+                    <ion-label>高新旅顺</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210212" *ngIf="addvCode != '210212'">
+                    <ion-label>高新旅顺</ion-label>
+                </ion-segment-button>
+            </ion-segment>
 
-      <div style=" border-bottom: 1px solid #1f96ff; width:95%; margin-left: 10px;  margin-bottom: 3px;">
-      </div>
-      <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
-        <ion-segment-button class="tab-nav-item tab-active" value="210213" *ngIf="addvCode == '210213'">
-          <ion-label>金州</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210213" *ngIf="addvCode != '210213'">
-          <ion-label>金州</ion-label>
-        </ion-segment-button>
+            <div style=" border-bottom: 1px solid #1f96ff; width:95%; margin-left: 10px;  margin-bottom: 3px;">
+            </div>
+            <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
+                <ion-segment-button class="tab-nav-item tab-active" value="210213" *ngIf="addvCode == '210213'">
+                    <ion-label>金州</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210213" *ngIf="addvCode != '210213'">
+                    <ion-label>金州</ion-label>
+                </ion-segment-button>
 
-        <ion-segment-button class="tab-nav-item tab-active" value="210283" *ngIf="addvCode == '210283'">
-          <ion-label>庄河 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210283" *ngIf="addvCode != '210283'">
-          <ion-label>庄河 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210284" *ngIf="addvCode == '210284'">
-          <ion-label>碧流河上 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210284" *ngIf="addvCode != '210284'">
-          <ion-label>碧流河上 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210282" *ngIf="addvCode == '210282'">
-          <ion-label>普兰店 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210282" *ngIf="addvCode != '210282'">
-          <ion-label>普兰店 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210287" *ngIf="addvCode == '210287'">
-          <ion-label>长兴岛 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210287" *ngIf="addvCode != '210287'">
-          <ion-label>长兴岛 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item tab-active" value="210286" *ngIf="addvCode == '210286'">
-          <ion-label>英那河上 </ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="tab-nav-item" value="210286" *ngIf="addvCode != '210286'">
-          <ion-label>英那河上 </ion-label>
-        </ion-segment-button>
-      </ion-segment>
-    </div>
-    <div class="tab-panel">
-      <div class="tab-panel-item tab-active">
-        <div class="aui-text-title">
-          <h2>{{addvName}}降水实况<span>（单位:mm）</span></h2>
-          <p>{{startTime | date:'yyyy-MM-dd HH:mm'}} 至 {{currentTime | date:'yyyy-MM-dd HH:mm'}}</p>
-          <p class="intro">单击站点数据行查看更多详情</p>
+                <ion-segment-button class="tab-nav-item tab-active" value="210283" *ngIf="addvCode == '210283'">
+                    <ion-label>庄河 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210283" *ngIf="addvCode != '210283'">
+                    <ion-label>庄河 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210284" *ngIf="addvCode == '210284'">
+                    <ion-label>碧流河上 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210284" *ngIf="addvCode != '210284'">
+                    <ion-label>碧流河上 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210282" *ngIf="addvCode == '210282'">
+                    <ion-label>普兰店 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210282" *ngIf="addvCode != '210282'">
+                    <ion-label>普兰店 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210287" *ngIf="addvCode == '210287'">
+                    <ion-label>长兴岛 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210287" *ngIf="addvCode != '210287'">
+                    <ion-label>长兴岛 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210286" *ngIf="addvCode == '210286'">
+                    <ion-label>英那河上 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210286" *ngIf="addvCode != '210286'">
+                    <ion-label>英那河上 </ion-label>
+                </ion-segment-button>
+            </ion-segment>
         </div>
-        <div class="aui-table">
-          <ul class="table-nav">
-            <li class="table-nav-item1">
-              <span>站点</span>
-            </li>
-            <li class="table-nav-item" (click)="sortRain(1,'1h')">
-              <span *ngIf="sortTag == '1h'" style="color: orange; font-weight: bolder; font-size: 1rem;">1h</span>
-              <span *ngIf="sortTag != '1h'">1h</span>
-            </li>
-            <li class="table-nav-item" (click)="sortRain(3,'3h')">
-              <span *ngIf="sortTag == '3h'" style="color: orange; font-weight: bolder; font-size: 1rem;">3h</span>
-              <span *ngIf="sortTag != '3h'">3h</span>
-            </li>
-            <li class="table-nav-item" (click)="sortRain(6,'6h')">
-              <span *ngIf="sortTag == '6h'" style="color: orange; font-weight: bolder; font-size: 1rem;">6h</span>
-              <span *ngIf="sortTag != '6h'">6h</span>
-            </li>
-            <li class="table-nav-item" (click)="sortRain(12,'12h')">
-              <span *ngIf="sortTag == '12h'" style="color: orange; font-weight: bolder; font-size: 1rem;">12h</span>
-              <span *ngIf="sortTag != '12h'">12h</span>
-            </li>
-            <li class="table-nav-item" (click)="sortRain(24,'24h')">
-              <span *ngIf="sortTag == '24h'" style="color: orange; font-weight: bolder; font-size: 1rem;">24h</span>
-              <span *ngIf="sortTag != '24h'">24h</span>
-            </li>
-            <li class="table-nav-item2" (click)="sortRain(48,'48h')">
-              <span *ngIf="sortTag == '48h'" style="color: orange; font-weight: bolder; font-size: 1rem;">48h</span>
-              <span *ngIf="sortTag != '48h'">48h</span>
-            </li>
-          </ul>
-          <ul class="table-item" *ngFor="let rainRow of rainData" areaName
-            (click)="showTwoBtn(rainRow.addvname+'-'+rainRow.areaName,rainRow.areaCode)">
-            <li class="table-info-item1">
-              <span> {{rainRow.addvname.substr(0,1)}}-{{rainRow.areaName}}</span>
-            </li>
-            <li class="table-info-item">
-              <span>
+        <div class="tab-panel">
+            <div class="tab-panel-item tab-active">
+                <div class="aui-text-title">
+                    <h2>{{addvName}}降水实况<span>（单位:mm）</span></h2>
+                    <p>{{startTime | date:'yyyy-MM-dd HH:mm'}} 至 {{currentTime | date:'yyyy-MM-dd HH:mm'}}</p>
+                    <p class="intro">单击站点数据行查看更多详情</p>
+                </div>
+                <div class="aui-table">
+                    <ul class="table-nav">
+                        <li class="table-nav-item1">
+                            <span>站点</span>
+                        </li>
+                        <li class="table-nav-item" (click)="sortRain(1,'1h')">
+                            <span *ngIf="sortTag == '1h'" style="color: orange; font-weight: bolder; font-size: 1rem;">1h</span>
+                            <span *ngIf="sortTag != '1h'">1h</span>
+                        </li>
+                        <li class="table-nav-item" (click)="sortRain(3,'3h')">
+                            <span *ngIf="sortTag == '3h'" style="color: orange; font-weight: bolder; font-size: 1rem;">3h</span>
+                            <span *ngIf="sortTag != '3h'">3h</span>
+                        </li>
+                        <li class="table-nav-item" (click)="sortRain(6,'6h')">
+                            <span *ngIf="sortTag == '6h'" style="color: orange; font-weight: bolder; font-size: 1rem;">6h</span>
+                            <span *ngIf="sortTag != '6h'">6h</span>
+                        </li>
+                        <li class="table-nav-item" (click)="sortRain(12,'12h')">
+                            <span *ngIf="sortTag == '12h'" style="color: orange; font-weight: bolder; font-size: 1rem;">12h</span>
+                            <span *ngIf="sortTag != '12h'">12h</span>
+                        </li>
+                        <li class="table-nav-item" (click)="sortRain(24,'24h')">
+                            <span *ngIf="sortTag == '24h'" style="color: orange; font-weight: bolder; font-size: 1rem;">24h</span>
+                            <span *ngIf="sortTag != '24h'">24h</span>
+                        </li>
+                        <li class="table-nav-item2" (click)="sortRain(48,'48h')">
+                            <span *ngIf="sortTag == '48h'" style="color: orange; font-weight: bolder; font-size: 1rem;">48h</span>
+                            <span *ngIf="sortTag != '48h'">48h</span>
+                        </li>
+                    </ul>
+                    <ul class="table-item" *ngFor="let rainRow of rainData" areaName (click)="showTwoBtn(rainRow.addvname+'-'+rainRow.areaName,rainRow.areaCode)">
+                        <li class="table-info-item1">
+                            <span> {{rainRow.addvname.substr(0,1)}}-{{rainRow.areaName}}</span>
+                        </li>
+                        <li class="table-info-item">
+                            <span>
                 {{(rainRow.total_1 == null)?0:rainRow.total_1}}
               </span>
-            </li>
-            <li class="table-info-item">
-              <span>
+                        </li>
+                        <li class="table-info-item">
+                            <span>
                 {{(rainRow.total_3 == null)?0:rainRow.total_3}}
               </span>
-            </li>
-            <li class="table-info-item">
-              <span>
+                        </li>
+                        <li class="table-info-item">
+                            <span>
                 {{(rainRow.total_6 == null)?0:rainRow.total_6}}
               </span>
-            </li>
-            <li class="table-info-item">
-              <span>
+                        </li>
+                        <li class="table-info-item">
+                            <span>
                 {{(rainRow.total_12 == null)?0:rainRow.total_12}}
               </span>
-            </li>
-            <li class="table-info-item">
-              <span>
+                        </li>
+                        <li class="table-info-item">
+                            <span>
                 {{(rainRow.total_24 == null)?0:rainRow.total_24}}
               </span>
-            </li>
-            <li class="table-info-item">
-              <span>
+                        </li>
+                        <li class="table-info-item">
+                            <span>
                 {{(rainRow.total_48 == null)?0:rainRow.total_48}}
               </span>
-            </li>
-          </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
-
-      </div>
+        <div style="width:100%; text-align:center;">
+            <p class="aui-text-title" *ngIf="!hasMore">---数据完全加载---</p>
+        </div>
     </div>
-    <div style="width:100%; text-align:center;">
-      <p class="aui-text-title" *ngIf="!hasMore">---数据完全加载---</p>
-    </div>
-  </div>
 
-  <ion-infinite-scroll threshold="10%" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="正在加载中...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+    <ion-infinite-scroll threshold="10%" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="正在加载中...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
 
 <!-- --------------Template Start --------------------- -->
 
 <div class="pop" *ngIf="IsShowTwoBtnDialog">
 
-  <div class="pop-top">
-    <article class="tabs">
-      <ion-segment (ionChange)="segmentPeriodChanged($event)" class="tab-nav1 b-line">
-        <ion-segment-button [ngClass]="{'tab-active1':sitePeriod=='24H'}" class="tab-nav-item1" value="24H">
-          <ion-label>小时</ion-label>
-        </ion-segment-button>
-        <ion-segment-button [ngClass]="{'tab-active1':sitePeriod=='2H'}" class="tab-nav-item1" value="2H">
-          <ion-label>分钟</ion-label>
-        </ion-segment-button>
-      </ion-segment>
-      <div class="panels">
-        <div class="panel">
-          <h2>{{siteTitle}}近{{sitePeriod}}降水实况</h2>
-          <p>{{startPeriodTime | date:'yyyy-MM-dd HH:mm'}} 至
-            {{currentTime | date:'yyyy-MM-dd HH:mm'}}</p>
-          <div class="panel-chart" echarts [options]="chartOption"></div>
-        </div>
-      </div>
-    </article>
-  </div>
-  <div class="pop-content">
-  </div>
-
-  <div class="pop-foot">
-    <div>
-      <input type="image" value="" class="pop-cancel pop-close" (click)="twoBtnCancel()" />
+    <div class="pop-top">
+        <article class="tabs">
+            <ion-segment (ionChange)="segmentPeriodChanged($event)" class="tab-nav1 b-line">
+                <ion-segment-button [ngClass]="{'tab-active1':sitePeriod=='24H'}" class="tab-nav-item1" value="24H">
+                    <ion-label>小时</ion-label>
+                </ion-segment-button>
+                <ion-segment-button [ngClass]="{'tab-active1':sitePeriod=='2H'}" class="tab-nav-item1" value="2H">
+                    <ion-label>分钟</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+            <div class="panels">
+                <div class="panel">
+                    <h2>{{siteTitle}}近{{sitePeriod}}降水实况</h2>
+                    <p>{{startPeriodTime | date:'yyyy-MM-dd HH:mm'}} 至 {{currentTime | date:'yyyy-MM-dd HH:mm'}}</p>
+                    <div class="panel-chart" echarts [options]="chartOption"></div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="pop-content">
     </div>
 
-  </div>
+    <div class="pop-foot">
+        <div>
+            <span class="pop-cancel pop-close" (click)="twoBtnCancel()"></span>
+        </div>
+    </div>
 </div>
 <!-- --------------Template End --------------- -->
 <!-- <div class="TwoBtnDialog" *ngIf="IsShowTwoBtnDialog">
