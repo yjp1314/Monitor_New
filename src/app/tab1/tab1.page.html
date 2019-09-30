@@ -50,8 +50,10 @@
       <div class="panels">
         <div class="panel">
           <h2>{{siteTitle}}近24小时降水实况</h2>
-          <p>{{last24Hour | date:'yyyy-MM-dd HH:mm'}} 至
-            {{currentDate | date:'yyyy-MM-dd HH:mm'}}</p>
+          <p>{{last24Hour}} 至
+            {{currentDate}}</p>
+            <!-- <p>{{last24Hour | date:'yyyy-MM-dd HH:mm'}} 至
+              {{currentDate | date:'yyyy-MM-dd HH:mm'}}</p> -->
           <div class="panel-chart" echarts [options]="popChartOption"></div>
         </div>
       </div>

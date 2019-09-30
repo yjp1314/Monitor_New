@@ -238,7 +238,7 @@ export class Tab1Page implements OnInit {
         this.data = [];
         let maxData = [];
         let minData = [];
-        let startTime = this.last24Hour;
+        let startTime = new Date((new Date()).getTime() - 24 * 60 * 60 * 1000);;//this.last24Hour;
         let time = new Date(startTime);
         for (let i = 0; i < 12; i++) {
             let day = time.getDate();
