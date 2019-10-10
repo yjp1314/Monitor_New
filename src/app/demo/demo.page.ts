@@ -23,8 +23,8 @@ export class DemoPage implements OnInit {
   IsShowTwoBtnDialog: boolean = false;
   IsShowCover: boolean = false;
   chartOption: any;
-  category: any;
-  data: any;
+  category = [];
+  data = [];
   pageIndex = 1;
   pageSize = 40;
   hasMore = true;
@@ -208,7 +208,13 @@ export class DemoPage implements OnInit {
       for (let i = 0; i < 12; i++) {
         let mi = Math.floor(startTime.getMinutes() / 10) * 10;
         let hh = startTime.getHours();
-        this.category.push(hh + ":" + mi);
+        // console.log("mi: ",mi);
+        if (mi == 0) {
+          this.category.push(hh + ":00");
+        }
+        else {
+          this.category.push(hh + ":" + mi);
+        }
         this.data.push(0);
         maxData.push(-1);
         minData.push(-1);
@@ -219,7 +225,14 @@ export class DemoPage implements OnInit {
         let tempTime = new Date(element.collecttime);
         let tempHour = tempTime.getHours();
         let tempMinute = Math.floor(tempTime.getMinutes() / 10) * 10;
-        let tempCategory = tempHour + ":" + tempMinute;
+        let tempCategory;
+        // console.log("tempMinute: ",tempMinute);
+        if (tempMinute == 0) {
+          tempCategory = tempHour + ":00";
+        }
+        else {
+          tempCategory = tempHour + ":" + tempMinute;
+        }
         let tempIndex = this.category.indexOf(tempCategory);
         this.data[tempIndex] += element.paravalue;
         // console.log(this.category[tempIndex], this.data[tempIndex], element.paravalue);

@@ -50,6 +50,9 @@ export class RainService {
     getWmtRainTotalByRegion(params) {
         return this.http.post('wmtRain/GetWmtRainTotal', { fromTime: params.fromTime, toTime: params.toTime, addvcdArray: params.addvcd });
     }
+    getWmtRainTotalByRegion1(params) {
+        return this.http.post('wmtRain/GetWmtRainTotal1', { fromTime: params.fromTime, toTime: params.toTime, addvcdArray: params.addvcd });
+    }
 
     getWmtRainTotalBySite(params) {
         return this.http.post('wmtRain/GetWmtRainTotalBySite', { fromTime: params.fromTime, toTime: params.toTime });

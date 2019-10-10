@@ -90,7 +90,7 @@ export class MinePage implements OnInit {
     refeshRainChart() {
         let peremeters = { fromTime: this.startTime, toTime: this.currentTime, addvcd: this.addvcd };
         this.helper.showLoading();
-        this.ranSrv.getWmtRainTotalByRegion(peremeters).subscribe(res => {
+        this.ranSrv.getWmtRainTotalByRegion1(peremeters).subscribe(res => {
             if (res.isSuccess) {
                 this.siteRainData = res.data;
                 this.generateChart();
