@@ -303,7 +303,12 @@ export class Tab1Page implements OnInit {
                     type: 'bar',
                     barWidth: '60%',
                     data: this.data,
-                    animation: true
+                    animation: true,
+                    itemStyle: {
+                        normal: {
+                            barBorderRadius: [10, 10, 0, 0],
+                        }
+                    }
                 }
             ]
         };

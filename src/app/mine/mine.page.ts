@@ -254,7 +254,12 @@ export class MinePage implements OnInit {
                     name: '实际降雨量(mm)',
                     type: 'bar',
                     barWidth: '60%',
-                    data: this.data
+                    data: this.data,
+                    itemStyle: {
+                        normal: {
+                            barBorderRadius: [10, 10, 0, 0],
+                        }
+                    }
                 }
             ]
         };

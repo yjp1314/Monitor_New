@@ -39,7 +39,7 @@ export class DemoPage implements OnInit {
   }
   ngOnInit() {
   }
-  
+
   ionViewDidEnter() {
     this.resetTime();
     this.refeshAddvName(this.addvCode);
@@ -54,7 +54,7 @@ export class DemoPage implements OnInit {
   }
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
-    if(ev.detail.value === "") return;
+    if (ev.detail.value === "") return;
     this.resetTime();
     this.pageIndex = 1;
     this.sortHour = 1;
@@ -97,9 +97,9 @@ export class DemoPage implements OnInit {
     console.log(addvcds)
     this.ranSrv.getWmtRainTotalByHours(addvcds, this.pageIndex, this.pageSize, this.sortHour).subscribe(res => {
       if (res.isSuccess) {
-        this.siteRainData = res.data;console.log("res.data",res.data,res.data.length);
+        this.siteRainData = res.data; console.log("res.data", res.data, res.data.length);
         if (res.data != null && res.data.length > 0) {
-          console.log("res.data@@1",res.data);
+          console.log("res.data@@1", res.data);
           if (this.pageIndex > 1) {
             this.rainData = this.rainData.concat(res.data);
           }
@@ -109,8 +109,8 @@ export class DemoPage implements OnInit {
           console.log('this.rainData', this.rainData);
           this.hasMore = true;
         }
-        else if (res.data.length == 0 && this.pageIndex <= 1){
-          console.log("res.data@@2",res.data);
+        else if (res.data.length == 0 && this.pageIndex <= 1) {
+          console.log("res.data@@2", res.data);
           this.rainData = [];
         }
         // else if (res.data.length < this.pageSize) {
@@ -233,7 +233,7 @@ export class DemoPage implements OnInit {
     }
     else {
       //startTime = new Date(startTime.getTime() + 2 * 60 * 60 * 1000);
-      for (let i = 0; i < 12+1; i++) {
+      for (let i = 0; i < 12 + 1; i++) {
         let day = startTime.getDate();
         let hh = startTime.getHours();
         this.category.push(day + "日" + hh + "时");
@@ -293,7 +293,7 @@ export class DemoPage implements OnInit {
         axisPointer: {            // 坐标轴指示器，坐标轴触发有效
           type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
         },
-        "triggerOn":'click'
+        "triggerOn": 'click'
       },
       grid: {
         left: '3%',
@@ -324,7 +324,12 @@ export class DemoPage implements OnInit {
           type: 'bar',
           barWidth: '60%',
           data: this.data,
-          animation: true
+          animation: true,
+          itemStyle: {
+            normal: {
+              barBorderRadius: [10, 10, 0, 0],
+            }
+          }
         }
       ]
     };
