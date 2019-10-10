@@ -232,8 +232,8 @@ export class DemoPage implements OnInit {
       });
     }
     else {
-      startTime = new Date(startTime.getTime() + 2 * 60 * 60 * 1000);
-      for (let i = 0; i < 12; i++) {
+      //startTime = new Date(startTime.getTime() + 2 * 60 * 60 * 1000);
+      for (let i = 0; i < 12+1; i++) {
         let day = startTime.getDate();
         let hh = startTime.getHours();
         this.category.push(day + "日" + hh + "时");
