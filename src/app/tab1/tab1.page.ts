@@ -63,7 +63,6 @@ export class Tab1Page implements OnInit {
         this.service.getWmtRainTotalByRegion(params).subscribe(res => {
             if (res.isSuccess) {
                 const data = res.data;
-
                 if (data.length > 0) {
                     this.maxRainValue = data[data.length - 1].cal === null ? 0 : data[data.length - 1].cal;
                     data.forEach(element => {
@@ -140,6 +139,7 @@ export class Tab1Page implements OnInit {
                     type: 'value',
                     boundaryGap: [0, 0],
                     position: 'top',
+                    axisLabel: { interval:6 }
                 }
             ],
             grid: {
@@ -206,9 +206,8 @@ export class Tab1Page implements OnInit {
         this.siteTitle = title;
         this.IsShowTwoBtnDialog = true;
         this.IsShowCover = true;
-        this.currentDate = Utils.calDate(0);
-        this.last24Hour = Utils.calDate(24);
-
+        let last24Hour = new Date((new Date()).getTime() - 24 * 60 * 60 * 1000);;//this.last24Hour;
+        let currentDate = new Date();
         let areacode = "";
         if (type === 1) {
             areacode = this.oneHourMaxAreaCode;
@@ -224,6 +223,7 @@ export class Tab1Page implements OnInit {
         this.helper.showLoading();
         this.service.getWmtRainSiteDetail(areaCode, last24Hour, currentDate).subscribe(res => {
             if (res.isSuccess) {
+                console.log(this.siteRainData)
                 this.siteRainData = res.data;
                 this.generateChart();
                 this.helper.hideLoading();
@@ -238,9 +238,10 @@ export class Tab1Page implements OnInit {
         this.data = [];
         let maxData = [];
         let minData = [];
-        let startTime = new Date((new Date()).getTime() - 24 * 60 * 60 * 1000);;//this.last24Hour;
+        let startTime = new Date((new Date()).getTime() - 24 * 60 * 60 * 1000);//this.last24Hour;
         let time = new Date(startTime);
-        for (let i = 0; i < 12; i++) {
+
+        for (let i = 0; i < 13; i++) {
             let day = time.getDate();
             let hh = time.getHours();
             this.category.push(day + "日" + hh + "时");
