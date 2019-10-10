@@ -265,6 +265,8 @@ export class Tab1Page implements OnInit {
             this.data[tempIndex] += element.paravalue;
         });
 
+        console.log(this.data)
+        console.log(this.category)
         this.popChartOption = {
             color: ['#3398DB'],
             tooltip: {
