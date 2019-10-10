@@ -67,7 +67,7 @@ export class Tab1Page implements OnInit {
                 if (data.length > 0) {
                     this.maxRainValue = data[data.length - 1].cal === null ? 0 : data[data.length - 1].cal;
                     data.forEach(element => {
-                        if (element.addvName !== '中山区' && element.addvName !== '西岗区' && element.addvName !== '沙河口区') {
+                        if (element.addvName !== '高新园区' && element.addvName !== '碧流河下游' && element.addvName !== '中山区' && element.addvName !== '西岗区' && element.addvName !== '沙河口区') {
                             this.xAxis.push(element.cal === null ? 0 : element.cal);
                             this.yAxis.push(element.addvName);
                         }
@@ -256,56 +256,56 @@ export class Tab1Page implements OnInit {
             let temp2Hours = tempTime.getHours();
             let tempIndex = this.category.indexOf(tempDay + "日" + temp2Hours + "时");
             if (tempIndex < 0) {
-              let tempTime1 = new Date(new Date(element.collecttime).getTime() - 1 * 60 * 60 * 1000);
-              let tempDay1 = tempTime1.getDate();
-              let temp2Hours1 = tempTime1.getHours();
-              tempIndex = this.category.indexOf(tempDay1 + "日" + temp2Hours1 + "时");
+                let tempTime1 = new Date(new Date(element.collecttime).getTime() - 1 * 60 * 60 * 1000);
+                let tempDay1 = tempTime1.getDate();
+                let temp2Hours1 = tempTime1.getHours();
+                tempIndex = this.category.indexOf(tempDay1 + "日" + temp2Hours1 + "时");
             }
             this.data[tempIndex] += element.paravalue;
-          });
+        });
 
-          this.popChartOption = {
+        this.popChartOption = {
             color: ['#3398DB'],
             tooltip: {
-              trigger: 'axis',
-              axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-              },
-              "triggerOn":'click'
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+                "triggerOn": 'click'
             },
             grid: {
-              left: '3%',
-              right: '4%',
-              bottom: '3%',
-              containLabel: true
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
             },
             xAxis: [
-              {
-                type: 'category',
-                data: this.category,
-                axisTick: {
-                  alignWithLabel: true
-                },
-                axisLabel: {
-                  rotate: 90
+                {
+                    type: 'category',
+                    data: this.category,
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLabel: {
+                        rotate: 90
+                    }
                 }
-              }
             ],
             yAxis: [
-              {
-                type: 'value'
-              }
+                {
+                    type: 'value'
+                }
             ],
             series: [
-              {
-                name: '实际降雨量(mm)',
-                type: 'bar',
-                barWidth: '60%',
-                data: this.data,
-                animation: true
-              }
+                {
+                    name: '实际降雨量(mm)',
+                    type: 'bar',
+                    barWidth: '60%',
+                    data: this.data,
+                    animation: true
+                }
             ]
-          };
+        };
     }
     twoBtnCancel() {
         this.data = [];
