@@ -9,8 +9,8 @@ import { RainService } from '../services/rain.service';
   styleUrls: ['./demo.page.scss'],
 })
 export class DemoPage implements OnInit {
-  addvName = "市区";//"中山";
-  addvCode = "210201";//"210202";
+  addvName = "全市";//"中山";
+  addvCode = "2102";//"210202";
   currentTime = new Date();
   startTime = new Date((new Date().getTime() - 2 * 24 * 60 * 60 * 1000));
   rainData = [];
@@ -54,6 +54,7 @@ export class DemoPage implements OnInit {
   }
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
+    if(ev.detail.value === "") return;
     this.resetTime();
     this.pageIndex = 1;
     this.sortHour = 1;
@@ -150,6 +151,9 @@ export class DemoPage implements OnInit {
   refeshAddvName(addvcds) {
     //this.addvName = "旅顺";
     switch (addvcds) {
+      case "2102":
+        this.addvName = "全市";
+        break;
       case "210201":
         this.addvName = "市区";
         break;
@@ -228,6 +232,7 @@ export class DemoPage implements OnInit {
       });
     }
     else {
+      startTime = new Date(startTime.getTime() + 2 * 60 * 60 * 1000);
       for (let i = 0; i < 12; i++) {
         let day = startTime.getDate();
         let hh = startTime.getHours();

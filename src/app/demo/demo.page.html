@@ -11,65 +11,23 @@
         <div class="setback">
             <div style="height: 3px;"></div>
             <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
+                <ion-segment-button class="tab-nav-item tab-active" value="2102" *ngIf="addvCode == '2102'">
+                    <ion-label>全市</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="2102" *ngIf="addvCode != '2102'">
+                    <ion-label>全市</ion-label>
+                </ion-segment-button>
                 <ion-segment-button class="tab-nav-item tab-active" value="210201" *ngIf="addvCode == '210201'">
                     <ion-label>市区</ion-label>
                 </ion-segment-button>
                 <ion-segment-button class="tab-nav-item" value="210201" *ngIf="addvCode != '210201'">
                     <ion-label>市区</ion-label>
                 </ion-segment-button>
-                <ion-segment-button class="tab-nav-item tab-active" value="210211" *ngIf="addvCode == '210211'">
-                    <ion-label>甘井子</ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item" value="210211" *ngIf="addvCode != '210211'">
-                    <ion-label>甘井子</ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item tab-active" value="210285" *ngIf="addvCode == '210285'">
-                    <ion-label>碧流河下 </ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item" value="210285" *ngIf="addvCode != '210285'">
-                    <ion-label>碧流河下 </ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item tab-active" value="210224" *ngIf="addvCode == '210224'">
-                    <ion-label>长海县</ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item" value="210224" *ngIf="addvCode != '210224'">
-                    <ion-label>长海县</ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item tab-active" value="210281" *ngIf="addvCode == '210281'">
-                    <ion-label>瓦房店</ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item" value="210281" *ngIf="addvCode != '210281'">
-                    <ion-label>瓦房店</ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item tab-active" value="210212" *ngIf="addvCode == '210212'">
-                    <ion-label>高新旅顺</ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item" value="210212" *ngIf="addvCode != '210212'">
-                    <ion-label>高新旅顺</ion-label>
-                </ion-segment-button>
-            </ion-segment>
-
-            <div style=" border-bottom: 1px solid #1f96ff; width:95%; margin-left: 10px;  margin-bottom: 3px;">
-            </div>
-            <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
-                <ion-segment-button class="tab-nav-item tab-active" value="210213" *ngIf="addvCode == '210213'">
-                    <ion-label>金州</ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item" value="210213" *ngIf="addvCode != '210213'">
-                    <ion-label>金州</ion-label>
-                </ion-segment-button>
-
                 <ion-segment-button class="tab-nav-item tab-active" value="210283" *ngIf="addvCode == '210283'">
                     <ion-label>庄河 </ion-label>
                 </ion-segment-button>
                 <ion-segment-button class="tab-nav-item" value="210283" *ngIf="addvCode != '210283'">
                     <ion-label>庄河 </ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item tab-active" value="210284" *ngIf="addvCode == '210284'">
-                    <ion-label>碧流河上 </ion-label>
-                </ion-segment-button>
-                <ion-segment-button class="tab-nav-item" value="210284" *ngIf="addvCode != '210284'">
-                    <ion-label>碧流河上 </ion-label>
                 </ion-segment-button>
                 <ion-segment-button class="tab-nav-item tab-active" value="210282" *ngIf="addvCode == '210282'">
                     <ion-label>普兰店 </ion-label>
@@ -77,17 +35,75 @@
                 <ion-segment-button class="tab-nav-item" value="210282" *ngIf="addvCode != '210282'">
                     <ion-label>普兰店 </ion-label>
                 </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210281" *ngIf="addvCode == '210281'">
+                    <ion-label>瓦房店</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210281" *ngIf="addvCode != '210281'">
+                    <ion-label>瓦房店</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+
+            <div style=" border-bottom: 1px solid #1f96ff; width:95%; margin-left: 10px;  margin-bottom: 3px;">
+            </div>
+            <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
+                <ion-segment-button class="tab-nav-item tab-active" value="210211" *ngIf="addvCode == '210211'">
+                    <ion-label>甘井子</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210211" *ngIf="addvCode != '210211'">
+                    <ion-label>甘井子</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210213" *ngIf="addvCode == '210213'">
+                    <ion-label>金州</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210213" *ngIf="addvCode != '210213'">
+                    <ion-label>金州</ion-label>
+                </ion-segment-button>
                 <ion-segment-button class="tab-nav-item tab-active" value="210287" *ngIf="addvCode == '210287'">
                     <ion-label>长兴岛 </ion-label>
                 </ion-segment-button>
                 <ion-segment-button class="tab-nav-item" value="210287" *ngIf="addvCode != '210287'">
                     <ion-label>长兴岛 </ion-label>
                 </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210288" *ngIf="addvCode == '210288'">
+                    <ion-label>花园口 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210288" *ngIf="addvCode != '210288'">
+                    <ion-label>花园口 </ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210224" *ngIf="addvCode == '210224'">
+                    <ion-label>长海县</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210224" *ngIf="addvCode != '210224'">
+                    <ion-label>长海县</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+
+            <div style=" border-bottom: 1px solid #1f96ff; width:95%; margin-left: 10px;  margin-bottom: 3px;">
+            </div>
+            <ion-segment (ionChange)="segmentChanged($event)" class="tab-nav b-line">
+                <ion-segment-button class="tab-nav-item tab-active" value="210284" *ngIf="addvCode == '210284'">
+                    <ion-label>碧流河上游</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210284" *ngIf="addvCode != '210284'">
+                    <ion-label>碧流河上游</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="">
+                    <ion-label></ion-label>
+                </ion-segment-button>
                 <ion-segment-button class="tab-nav-item tab-active" value="210286" *ngIf="addvCode == '210286'">
-                    <ion-label>英那河上 </ion-label>
+                    <ion-label>英那河上游</ion-label>
                 </ion-segment-button>
                 <ion-segment-button class="tab-nav-item" value="210286" *ngIf="addvCode != '210286'">
-                    <ion-label>英那河上 </ion-label>
+                    <ion-label>英那河上游</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="">
+                    <ion-label></ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item tab-active" value="210212" *ngIf="addvCode == '210212'">
+                    <ion-label>高新旅顺</ion-label>
+                </ion-segment-button>
+                <ion-segment-button class="tab-nav-item" value="210212" *ngIf="addvCode != '210212'">
+                    <ion-label>高新旅顺</ion-label>
                 </ion-segment-button>
             </ion-segment>
         </div>
