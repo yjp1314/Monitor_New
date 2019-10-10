@@ -205,7 +205,7 @@ export class DemoPage implements OnInit {
     let minData = [];
     let startTime = this.startPeriodTime;
     if (this.sitePeriod == "2H") {
-      for (let i = 0; i < 12; i++) {
+      for (let i = 0; i < 12 + 1; i++) {
         let mi = Math.floor(startTime.getMinutes() / 10) * 10;
         let hh = startTime.getHours();
         // console.log("mi: ",mi);
