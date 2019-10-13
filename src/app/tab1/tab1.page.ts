@@ -139,7 +139,7 @@ export class Tab1Page implements OnInit {
                     type: 'value',
                     boundaryGap: [0, 0],
                     position: 'top',
-                    axisLabel: { interval:6 }
+                    axisLabel: { interval: 6 }
                 }
             ],
             grid: {
@@ -252,8 +252,9 @@ export class Tab1Page implements OnInit {
         }
 
         this.siteRainData.forEach(element => {
-             console.log(Utils.utc2beijing(element.collecttime))
+            console.log(Utils.utc2beijing(element.collecttime))
             let tempTime = new Date(Utils.utc2beijing(element.collecttime));
+            console.log(tempTime)
             let tempDay = tempTime.getDate();
             let temp2Hours = tempTime.getHours();
             let tempIndex = this.category.indexOf(tempDay + "日" + temp2Hours + "时");
@@ -263,7 +264,8 @@ export class Tab1Page implements OnInit {
                 let temp2Hours1 = tempTime1.getHours();
                 tempIndex = this.category.indexOf(tempDay1 + "日" + temp2Hours1 + "时");
             }
-            this.data[tempIndex] += parseFloat(element.paravalue) ;
+            console.log(tempIndex + "___" + element.paravalue);
+            this.data[tempIndex] += parseFloat(element.paravalue);
         });
 
         console.log(this.data)
