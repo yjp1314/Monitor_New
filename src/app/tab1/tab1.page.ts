@@ -252,7 +252,7 @@ export class Tab1Page implements OnInit {
         }
 
         this.siteRainData.forEach(element => {
-            // console.log(Utils.utc2beijing(element.collecttime))
+             console.log(Utils.utc2beijing(element.collecttime))
             let tempTime = new Date(Utils.utc2beijing(element.collecttime));
             let tempDay = tempTime.getDate();
             let temp2Hours = tempTime.getHours();
