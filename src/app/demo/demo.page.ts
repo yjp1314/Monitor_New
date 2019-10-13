@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Helper } from '../providers/Helper';
 import { RainService } from '../services/rain.service';
+import { Utils } from '../providers/Utils';
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.page.html',
   styleUrls: ['./demo.page.scss'],
+  providers:[Utils]
 })
 export class DemoPage implements OnInit {
   addvName = "全市";//"中山";
@@ -222,7 +224,7 @@ export class DemoPage implements OnInit {
       }
       //this.category = this.category.reverse();
       this.siteRainData.forEach(element => {
-        let tempTime = new Date(element.collecttime);
+        let tempTime = new Date(Utils.utc2beijing(element.collecttime));
         let tempHour = tempTime.getHours();
         let tempMinute = Math.floor(tempTime.getMinutes() / 10) * 10;
         let tempCategory;
@@ -234,7 +236,7 @@ export class DemoPage implements OnInit {
           tempCategory = tempHour + ":" + tempMinute;
         }
         let tempIndex = this.category.indexOf(tempCategory);
-        this.data[tempIndex] += element.paravalue;
+        this.data[tempIndex] += parseFloat(element.paravalue) ;
         // console.log(this.category[tempIndex], this.data[tempIndex], element.paravalue);
         // if (maxData[tempIndex] < element.paravalue) {
         //   maxData[tempIndex] = element.paravalue;
@@ -257,18 +259,18 @@ export class DemoPage implements OnInit {
       }
       //this.category = this.category.reverse();
       this.siteRainData.forEach(element => {
-        let tempTime = new Date(element.collecttime);
+        let tempTime = new Date(Utils.utc2beijing(element.collecttime));
         let tempDay = tempTime.getDate();
         let temp2Hours = tempTime.getHours();
         let tempIndex = this.category.indexOf(tempDay + "日" + temp2Hours + "时");
         if (tempIndex < 0) {
-          let tempTime1 = new Date(new Date(element.collecttime).getTime() - 1 * 60 * 60 * 1000);
+          let tempTime1 = new Date(new Date(Utils.utc2beijing(element.collecttime)).getTime() - 1 * 60 * 60 * 1000);
           console.log("Time:", tempTime, tempTime1);
           let tempDay1 = tempTime1.getDate();
           let temp2Hours1 = tempTime1.getHours();
           tempIndex = this.category.indexOf(tempDay1 + "日" + temp2Hours1 + "时");
         }
-        this.data[tempIndex] += element.paravalue;
+        this.data[tempIndex] += parseFloat(element.paravalue) ;
         // if (maxData[tempIndex] < element.paravalue) {
         //   maxData[tempIndex] = element.paravalue;
         // }

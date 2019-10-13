@@ -223,8 +223,8 @@ export class Tab1Page implements OnInit {
         this.helper.showLoading();
         this.service.getWmtRainSiteDetail(areaCode, last24Hour, currentDate).subscribe(res => {
             if (res.isSuccess) {
-                console.log(this.siteRainData)
                 this.siteRainData = res.data;
+                console.log(this.siteRainData)
                 this.generateChart();
                 this.helper.hideLoading();
             }
@@ -252,17 +252,18 @@ export class Tab1Page implements OnInit {
         }
 
         this.siteRainData.forEach(element => {
-            let tempTime = new Date(element.collecttime);
+            // console.log(Utils.utc2beijing(element.collecttime))
+            let tempTime = new Date(Utils.utc2beijing(element.collecttime));
             let tempDay = tempTime.getDate();
             let temp2Hours = tempTime.getHours();
             let tempIndex = this.category.indexOf(tempDay + "日" + temp2Hours + "时");
             if (tempIndex < 0) {
-                let tempTime1 = new Date(new Date(element.collecttime).getTime() - 1 * 60 * 60 * 1000);
+                let tempTime1 = new Date(new Date(Utils.utc2beijing(element.collecttime)).getTime() - 1 * 60 * 60 * 1000);
                 let tempDay1 = tempTime1.getDate();
                 let temp2Hours1 = tempTime1.getHours();
                 tempIndex = this.category.indexOf(tempDay1 + "日" + temp2Hours1 + "时");
             }
-            this.data[tempIndex] += element.paravalue;
+            this.data[tempIndex] += parseFloat(element.paravalue) ;
         });
 
         console.log(this.data)
